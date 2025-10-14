@@ -515,7 +515,7 @@ void iterate_vertex(){
         for(int j=0;j<sol_cnt;j++){
             flag|=(u.first>=sol[j].cur_sol_size);
         }
-        if(!flag&&sol_cnt==B) continue;
+        if(!flag&&sol_cnt==B) break;
         int num=sift_num(u.second);
         insert_sol(u.second,num);
     }
@@ -556,7 +556,7 @@ void add_edge(int u,int v){
     neighbor[v].emplace_back(u);
     int flag=0;
     for(int w:neighbor[u]){
-        if((deg[u]+1)>=(deg[w]+1)*ts){
+        if((deg[u]+1)>=(deg[w]+1)*ts&&(deg[u]<(deg[w]+1)*ts||w==v)){
             deg_gamma[w]++;
             if(deg_gamma[w]>=deg_gamma_min){
                 int num=sift_num(w);
@@ -565,7 +565,7 @@ void add_edge(int u,int v){
         }
     }
     for(int w:neighbor[v]){
-        if((deg[v]+1)>=(deg[w]+1)*ts){
+        if((deg[v]+1)>=(deg[w]+1)*ts&&(deg[v]<(deg[w]+1)*ts||w==u)){
             deg_gamma[w]++;
             if(deg_gamma[w]>=deg_gamma_min){
                 int num=sift_num(w);
