@@ -48,3 +48,30 @@ If you want to execute `DynamicQC` with BottomK method, the fomat of the imput p
 ```bash
 ./DynamicQC -f filepath -gamma para1 -b para2 -k para3 -l para4 -alpha para5 -Batch para6 -B para7 -Q para8 -use_bottom_k
 ```
+
+### Running the baseline method (NSF)
+
+We also include the implementation of the baseline method NSF for comparison.
+
+To compile NSF, use the following command:
+
+```bash
+g++ NSF.cpp NSF.h -o NSF
+```
+
+Then you can execute `NSF`.
+For the `NSF-fn` variant, the input format is:
+
+```bash
+./NSF input-filename gamma b k
+```
+
+For the `NSF-ns` variant, the input format is:
+
+```bash
+./NSF input-filename gamma b
+```
+
+All methods use the same input data format to ensure a fair comparison.
+
+Unless otherwise specified, all experiments use identical parameter settings and update streams across different methods.
