@@ -6,10 +6,6 @@ This repository contains the source code for our ongoing research on efficient q
 Our approach focuses on handling graph updates (edge additions and deletions) efficiently, aiming to maintain and update large quasi-clique structures without recomputing from scratch after each change.
 The code is written in C++, using only standard libraries, and can be compiled in any environment.
 
-**Supplementary Material:**
-
-Additional experimental details and supplementary results are provided in `supplement.pdf` under this repository.
-
 ## Dataset
 
 All datasets used in our experiments are mainly derived from **SNAP** and **KONECT**, with randomized edge additions and deletions to simulate dynamic updates.
